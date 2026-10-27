@@ -16,9 +16,11 @@ const PAGE = "https://nuuvive.com/studies/verifiability-gap";
 const CSV = `${PAGE}/data.csv`;
 const ZENODO = "https://zenodo.org/api";
 const dry = process.argv.includes("--dry-run");
+// Zenodo answers 403 to Node's default "node" user agent.
+const UA = "nuuvive-dataset-sync/1.0 (+https://nuuvive.com)";
 
 async function get(url) {
-  const res = await fetch(url, { headers: { "user-agent": "nuuvive-dataset-sync/1.0" } });
+  const res = await fetch(url, { headers: { "user-agent": UA } });
   if (!res.ok) throw new Error(`${res.status} for ${url}`);
   return res.text();
 }
@@ -35,7 +37,7 @@ async function zenodo(path, { method = "GET", body, raw } = {}) {
   const url = path.startsWith("http") ? path : `${ZENODO}${path}`;
   const res = await fetch(url, {
     method,
-    headers: { Authorization: `Bearer ${process.env.ZENODO_TOKEN}`, ...(raw ? { "Content-Type": "application/octet-stream" } : body ? { "Content-Type": "application/json" } : {}) },
+    headers: { "User-Agent": UA, Authorization: `Bearer ${process.env.ZENODO_TOKEN}`, ...(raw ? { "Content-Type": "application/octet-stream" } : body ? { "Content-Type": "application/json" } : {}) },
     body: raw ?? (body ? JSON.stringify(body) : undefined),
   });
   const text = await res.text();
