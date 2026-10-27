@@ -5,6 +5,7 @@ title: "The verifiability gap: lab reports posted by research peptide stores"
 authors:
   - name: "NuuVive"
     website: "https://nuuvive.com"
+doi: "10.5281/zenodo.23712930"
 url: "https://nuuvive.com/studies/verifiability-gap"
 repository-code: "https://github.com/NuuVive/peptide-coa-verifiability"
 license: CC-BY-4.0

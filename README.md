@@ -1,11 +1,13 @@
 # The verifiability gap: lab reports posted by research peptide stores
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23712930.svg)](https://doi.org/10.5281/zenodo.23712930)
+
 A record-level, anonymised dataset of the lab reports (certificates of analysis, COAs) that research peptide stores post. For each report it records whether the report links to the laboratory's own copy, which lab issued it, how old it is, whether it carries a batch number and report ID, and whether it is still posted.
 
 - **Study and findings:** https://nuuvive.com/studies/verifiability-gap
 - **Publisher:** NuuVive (https://nuuvive.com)
 - **Updated:** monthly. Each edition is a dated file in `data/`; `data/latest.csv` is the newest.
-- **Archive:** every edition is also archived on Zenodo with a DOI (see the badge or `CITATION.cff`).
+- **Archive:** every edition is archived on Zenodo. DOI for all versions: [10.5281/zenodo.23712930](https://doi.org/10.5281/zenodo.23712930).
 
 ## Files
 
@@ -44,4 +46,4 @@ Each edition pulls the full default feed of the PeptideBenchmark public COA API,
 
 The dataset is published under [CC BY 4.0](LICENSE). It is built from the [PeptideBenchmark public COA API](https://peptidebenchmark.com/testing/coas/api/), whose reuse terms ask that record IDs, permalinks, provenance labels and source attribution are preserved when republishing; every row keeps them. Inclusion of a report is not an endorsement of any product, store or laboratory.
 
-Cite as: NuuVive, *The verifiability gap: lab reports posted by research peptide stores* (dataset), https://nuuvive.com/studies/verifiability-gap.
+Cite as: NuuVive, *The verifiability gap: lab reports posted by research peptide stores* (dataset), Zenodo, https://doi.org/10.5281/zenodo.23712930.
