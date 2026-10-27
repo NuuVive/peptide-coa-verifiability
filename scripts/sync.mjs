@@ -61,7 +61,7 @@ function metadata(ld) {
     related_identifiers: [
       { identifier: PAGE, relation: "isSupplementTo", resource_type: "publication-other" },
       { identifier: "https://peptidebenchmark.com/testing/coas/api/", relation: "isDerivedFrom", resource_type: "dataset" },
-      { identifier: "https://github.com/nuuvive/peptide-coa-verifiability", relation: "isSupplementedBy", resource_type: "dataset" },
+      { identifier: "https://github.com/NuuVive/peptide-coa-verifiability", relation: "isSupplementedBy", resource_type: "dataset" },
     ],
   };
 }

@@ -6,7 +6,7 @@ authors:
   - name: "NuuVive"
     website: "https://nuuvive.com"
 url: "https://nuuvive.com/studies/verifiability-gap"
-repository-code: "https://github.com/nuuvive/peptide-coa-verifiability"
+repository-code: "https://github.com/NuuVive/peptide-coa-verifiability"
 license: CC-BY-4.0
 version: "2026-10-05"
 date-released: "2026-10-05"
