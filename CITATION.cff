@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "The verifiability gap: lab reports posted by research peptide stores"
+authors:
+  - name: "NuuVive"
+    website: "https://nuuvive.com"
+url: "https://nuuvive.com/studies/verifiability-gap"
+repository-code: "https://github.com/nuuvive/peptide-coa-verifiability"
+license: CC-BY-4.0
+version: "2026-10-05"
+date-released: "2026-10-05"
+keywords:
+  - peptide lab reports
+  - certificate of analysis
+  - COA verification
+  - research peptides

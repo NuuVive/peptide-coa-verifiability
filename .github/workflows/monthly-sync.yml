@@ -1,0 +1,26 @@
+name: Monthly dataset sync
+# The study refreshes on the 1st (15:30 UTC); this picks the new edition up the
+# next morning, commits it and publishes it to Zenodo. Re-runs are no-ops.
+on:
+  schedule:
+    - cron: "0 9 2 * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/sync.mjs
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      - name: Commit
+        run: |
+          git config user.name "NuuVive"
+          git config user.email "support@nuuvive.com"
+          git add -A data CITATION.cff zenodo.json 2>/dev/null || git add -A data CITATION.cff
+          git diff --cached --quiet || (git commit -m "data: edition $(grep -m1 '^version:' CITATION.cff | cut -d'"' -f2)" && git push)
